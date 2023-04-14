@@ -40,9 +40,4 @@ class MySharedPreferences{
     return channelListFromJson(channelListJson ?? '[]');
   }
 
-/*  // static const _isSaveSignIn = false;
-  static Future<void> setSaveIsLiked(bool isLiked) async{
-    _sharedPreferences.setBool('isLiked', isLiked);
-  }
-  static bool getSaveIsLiked() => _sharedPreferences.getBool('isLiked') ?? false;*/
 }

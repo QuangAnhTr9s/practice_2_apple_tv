@@ -159,6 +159,6 @@ class _ChannelsPageState extends State<ChannelsPage> with TickerProviderStateMix
                   ),
                 );
               },
-            );
+    );
   }
 }

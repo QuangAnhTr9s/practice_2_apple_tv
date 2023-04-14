@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -6,16 +5,23 @@ import 'package:practice_2_apple_tv/base/bloc.dart';
 
 import '../../models/movie.dart';
 
-class FeaturedPageBloc extends Bloc{
+class FeaturedPageBloc extends Bloc {
   //create ListMovies
-  final Set<Movie> _listMovieFeatured = Bloc().listMovies.where((element) => element.iMDb >= 8).toSet();
-  final Set<Movie> _listMovieNewRealese = Bloc().listMovies.where((element) => element.yearOfManufacture >= 2020).toSet();
-  final Set<Movie> _listMovieSeries = Bloc().listMovies.where((element) => element.name.contains('Spider-Man')).toSet();
+  final Set<Movie> _listMovieFeatured =
+      Bloc().listMovies.where((element) => element.iMDb >= 8).toSet();
+  final Set<Movie> _listMovieNewRealese = Bloc()
+      .listMovies
+      .where((element) => element.yearOfManufacture >= 2020)
+      .toSet();
+  final Set<Movie> _listMovieSeries = Bloc()
+      .listMovies
+      .where((element) => element.name.contains('Spider-Man'))
+      .toSet();
 
-  Set<Movie> get listMovieFeatured =>
-      _listMovieFeatured;
+  Set<Movie> get listMovieFeatured => _listMovieFeatured;
+
   //create listMovieWhatToWatch with 5 random movies from all movie
-  Set<Movie> getRandomListMovieWhatToWatch(){
+  Set<Movie> getRandomListMovieWhatToWatch() {
     final random = Random();
     Set<Movie> listMovieWhatToWatch = {};
     for (int i = 0; i < 5; i++) {
@@ -26,6 +32,7 @@ class FeaturedPageBloc extends Bloc{
   }
 
   late TabController _tabController;
+
   //init Page Controller
   final _pageFeaturedController = PageController();
 
@@ -40,7 +47,9 @@ class FeaturedPageBloc extends Bloc{
 
   //getter
   Set<Movie> get listMovieNewRealese => _listMovieNewRealese;
+
   Set<Movie> get listMovieSeries => _listMovieSeries;
+
   // double get currentPage => _currentPage;
   get pageFeaturedController => _pageFeaturedController;
 
@@ -62,6 +71,4 @@ class FeaturedPageBloc extends Bloc{
         _currentPageSink.add(_currentPage);
     });
   }*/
-
-
 }
